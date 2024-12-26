@@ -4,7 +4,7 @@ import Slider from "react-slick";
 function MultipleItems() {
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3
@@ -38,6 +38,12 @@ function MultipleItems() {
         </div>
         <div>
           <h3>9</h3>
+        </div>
+        <div>
+          <h3>10</h3>
+        </div>
+        <div>
+          <h3>11</h3>
         </div>
       </Slider>
     </div>

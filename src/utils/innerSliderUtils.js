@@ -483,6 +483,11 @@ export const swipeEnd = (e, spec) => {
     }
     let slideCount, newSlide;
     let activeSlide = infinite ? currentSlide : targetSlide;
+
+    // handle floor slide
+    const initSlidesToShow = spec?.slidesToShow ?? 1;
+    const initSlideCount = spec?.slideCount ?? 0;
+
     switch (swipeDirection) {
       case "left":
       case "up":
@@ -499,6 +504,14 @@ export const swipeEnd = (e, spec) => {
       default:
         slideCount = activeSlide;
     }
+
+    // handle floor slide
+    if (slideCount > initSlideCount) {
+      slideCount = initSlideCount;
+    }
+    const index = Math.floor(slideCount / initSlidesToShow);
+    slideCount = index * initSlidesToShow;
+
     state["triggerSlideHandler"] = slideCount;
   } else {
     // Adjust the track back to it's original position.

@@ -1,15 +1,13 @@
 "use strict";
 
 import React from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom";
 import Docs from "./docs";
 
-const container = document.getElementById("rapp");
-const root = createRoot(container);
-
 React.initializeTouchEvents && React.initializeTouchEvents(true);
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <Docs />
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById("rapp")
 );

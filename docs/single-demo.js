@@ -1,7 +1,7 @@
 "use strict";
 
 import React from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom";
 import Slider from "../src/slider";
 import MultipleItems from "../examples/MultipleItems";
 function SimpleSlider() {
@@ -48,12 +48,10 @@ function App() {
   );
 }
 
-const container = document.getElementById("rapp");
-const root = createRoot(container);
-
 React.initializeTouchEvents && React.initializeTouchEvents(true);
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById("rapp")
 );

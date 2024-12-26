@@ -204,11 +204,13 @@ export default class Slider extends React.Component {
     ) {
       settings.unslick = true;
     }
+
+    settings = { ...this.props, ...filterSettings(settings) };
     return (
       <InnerSlider
         style={this.props.style}
         ref={this.innerSliderRefHandler}
-        {...filterSettings(settings)}
+        {...settings}
       >
         {newChildren}
       </InnerSlider>
